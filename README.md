@@ -32,3 +32,8 @@ Create an Automator app.
 - [ ] Introduce logic to keep track of which messages are sent
 - [ ] Create bigger text lists
 - [ ] Add support for nicknames
+- [ ] iOS port to shortcuts
+
+> [!WARNING]
+> Known issues for Security & Privacy Preferences to add Cron to disk access folders.
+> Investigating automation of app creation on-device to remove user input requirements.
