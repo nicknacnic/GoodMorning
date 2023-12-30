@@ -14,13 +14,15 @@ function install() {
     # Prompt for anniversary date (format MM/DD/YY)
     read -p "Enter the anniversary date (format MM/DD/YY): " anniversary_date
 
-    # Extract monthiversary day from anniversary date
-    monthiversary_day=$(echo $anniversary_date | cut -d'/' -f2)
+    # Extract month and day from anniversary date
+    anniversary_month=$(echo $anniversary_date | cut -d'/' -f1)
+    anniversary_day=$(echo $anniversary_date | cut -d'/' -f2)
 
     # Replace placeholders in Message.scpt
-    sed -i '' "s/TARGET_CELL/$cell_number/g" Message.scpt
-    sed -i '' "s/ANNIVERSARY_DATE/$anniversary_date/g" Message.scpt
-    sed -i '' "s/MONTHIVERSARY_DAY/$monthiversary_day/g" Message.scpt
+    sed -i '' "s/TARGET_CELLPHONE/$cell_number/g" Message.scpt
+    sed -i '' "s/dayOfMonth = XX/dayOfMonth = $anniversary_day/g" Message.scpt
+    sed -i '' "s/monthOfYear = X/monthOfYear = $anniversary_month/g" Message.scpt
+    sed -i '' "s/else if dayOfMonth = XX/else if dayOfMonth = $anniversary_day/g" Message.scpt
 
     # Instructions for setting up Automator Application
     echo "Please set up the Automator application manually using the modified Message.scpt script."
