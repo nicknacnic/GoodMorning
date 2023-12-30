@@ -30,6 +30,12 @@ Create an Automator app.
     - The install script should take care of this, you can check by using crontab.
     > crontab -l
 
+> [!TIP]
+> To troubleshoot if the cronjob is running/erroring try the below:
+```
+grep cron /var/log/system.log # if error code 1 see warnings below
+sudo launchctl list | grep cron # to check if cron is running
+```
 ## To Do
 - [x] Complete install/uninstall script
 - [ ] Introduce logic to keep track of which messages are sent
@@ -39,4 +45,7 @@ Create an Automator app.
 
 > [!WARNING]
 > Known issues for Security & Privacy Preferences to add Cron to disk access folders.
-> Investigating automation of app creation on-device to remove user input requirements.
+> - Investigating automation of app creation on-device to remove user input requirements.
+> - Investigating options to sudo install cron accessing folders
+
+You may need to manually open System Preferences, Security & Privacy, Privacy, scroll down to Full Disk Access, click the + sign, shift+apple+g to go to /usr/sbin and manually select cron.
