@@ -8,6 +8,9 @@ function install() {
     git clone $REPO_URL
     cd $REPO_DIR
 
+    # Get the current directory as the texts directory path
+    texts_dir_path=$(pwd)
+
     # Prompt for cell number
     read -p "Enter the cell number for receiving messages: " cell_number
 
@@ -19,6 +22,7 @@ function install() {
     anniversary_day=$(echo $anniversary_date | cut -d'/' -f2)
 
     # Replace placeholders in Message.scpt
+    sed -i '' "s|TEXTS_DIRECTORY_PATH|$texts_dir_path|g" Message.scpt
     sed -i '' "s/TARGET_CELLPHONE/$cell_number/g" Message.scpt
     sed -i '' "s/dayOfMonth = XX/dayOfMonth = $anniversary_day/g" Message.scpt
     sed -i '' "s/monthOfYear = X/monthOfYear = $anniversary_month/g" Message.scpt
