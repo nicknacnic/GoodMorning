@@ -3,13 +3,12 @@ set dayOfMonth to day of today
 set monthOfYear to month of today as number
 
 -- Determine the file path based on the date
-set filePath to "/path/to/text/directory"
+set filePath to "TEXTS_DIRECTORY_PATH"
 if (dayOfMonth = XX) and (monthOfYear = X) then -- your anniversary
-	set filePath to filePath & "AnniversaryText.txt" -- Path to your anniversary text file
+	set filePath to filePath & "AnniversaryText.txt" 
 else if dayOfMonth = XX then -- your monthiversary
-	set filePath to filePath & "MonthiversaryTexts.txt" -- Path to your monthiversary text file
-else
-	set filePath to filePath & "GeneralTexts.txt" -- Path to your general text file
+	set filePath to filePath & "MonthiversaryTexts.txt" 
+	set filePath to filePath & "GeneralTexts.txt" 
 end if
 
 try
