@@ -1,6 +1,7 @@
 # GoodMorning
-AppleScript to automate good morning texts
+AppleScript to automate good morning texts.
 
+> sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicknacnic/GoodMorning/main/install.sh)"
 
 Reads from specified directory which contains GeneralTexts.txt, AnniversaryText.txt, and MonthiversaryTexts.txt, checks the date to decide which to use, and then appends a heart emoji to be sent to a number of your choosing.
 
@@ -16,12 +17,12 @@ Add AppleScript Action:
 
 Insert Your Script:
     Copy and paste Messages.scpt.
-    Modify the XX and X for anniversary, monthiversary, and TARGET_CELL for who receives the messages.
+    This should be modified from the install script to include target cellphone number and anniversary date.
 
 Save Your Application:
     Go to File > Save
     Choose a name and location for your Automator application (e.g., "GoodMorning.app" in Applications).
 
 Run Your Application:
-    crontab -e
-    0 15 7 * * /path/to/cron.sh is 15 minutes after 7a, every day every month
+    The install script should take care of this, you can check by using
+    > crontab -l
