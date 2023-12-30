@@ -2,7 +2,7 @@
 AppleScript to automate good morning texts
 
 
-Reads from specified directory which contains GeneralTexts.txt, AnniversaryText.txt, and MonthiversaryTexts.txt, checks the date to decide which to use, and then appends a heart emoji to be sent to a number of your choosing. Can be used in tandem with Calendar.app to be sent every morning.
+Reads from specified directory which contains GeneralTexts.txt, AnniversaryText.txt, and MonthiversaryTexts.txt, checks the date to decide which to use, and then appends a heart emoji to be sent to a number of your choosing.
 
 You will then need to create a custom app in Automator:
 
@@ -22,15 +22,6 @@ Save Your Application:
     Go to File > Save
     Choose a name and location for your Automator application (e.g., "GoodMorning.app" in Applications).
 
-Open Calendar
-    Create a New Event: Click on the date when you want the script to run, then click on the time. Enter a name for the event (e.g., "Good Morning").
-
-Add an Alert to Run the Application:
-    In the event details, look for the option to add an alert, reminder, or notification.
-    Choose "Custom," then select "Open file."
-    Choose "Other" and select the Automator application you created.
-    Set the alert time to "At time of event."
-
-Repeat the Event (Optional): If you want the script to run regularly (like daily or weekly), set the event to repeat according to your preferred schedule.
-
-Save the Event: Make sure everything is set up as you want it, then close the event editor.
+Run Your Application:
+    crontab -e
+    0 15 7 * * /path/to/cron.sh is 15 minutes after 7a, every day every month
