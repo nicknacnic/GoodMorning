@@ -1,6 +1,9 @@
 # GoodMorning
 
 ## AppleScript to automate good morning texts.
+> [!NOTE]
+> Built for MacOS Big Sur 11.7+, for older Macs pre-shortcut/Sonoma build.
+
 
 ### Installation
 ```
